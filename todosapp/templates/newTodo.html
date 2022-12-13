@@ -1,0 +1,27 @@
+<div class="modal fade" id="newTodoModal" tabindex="-1" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <form action="{% url 'newTodo' %}" method="POST">
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">New Todo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="todoName" class="form-label">Todo Name</label>
+                        <input type="text" class="form-control" name="todoName" id="todoName" placeholder="Enter Todo Name" max-length="50" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="todoDescription" class="form-label">Todo Description</label>
+                        <textarea class="form-control" name="todoDescription" id="todoDescription" rows="5" placeholder="Enter Todo Description"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-outline-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
